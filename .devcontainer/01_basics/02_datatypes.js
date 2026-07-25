@@ -7,6 +7,7 @@ let age = 20
 let isLoggedIn = false
 
 /*
+------Primitive------
 number --> range(2^53)
 bigint
 string -->""
@@ -15,19 +16,22 @@ null --> representation of empty value --> standalone value
 undefined -->variable is declared but not defined yet
 symbol -->unique
 
+------Non-primitive(Reference)------
+array
+function
 object
 */
 
-// console.table([typeof "Ketan", typeof age])
-// console.log(typeof undefined); // undefined
-// console.log(typeof null); // object
+ console.table([typeof "Ketan", typeof age])
+ console.log(typeof undefined); // undefined
+ console.log(typeof null); // object
 
 //******Type conversion******
 
 let score = "67abc" // 
 let score2 = undefined
 
-//console.log(typeof(score2))
+console.log(typeof(score2))
 
 let valueInNumber = Number(score)
 // console.log(typeof valueInNumber)

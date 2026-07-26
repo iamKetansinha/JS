@@ -14,7 +14,7 @@ Comparisons convert null to a number, treating it as 0.
 That's why (3) null >= 0 is true and (1) null > 0 is false.
 */
 
-//++++++++++++++++++++++++++++
+//*************************************** 
 //Stack(Primitive), Heap(Non-primitive)
 
 let myYoutubeName = "hiteshchoudharydotcom"

@@ -26,4 +26,35 @@ function loginUserMessage(username = 'Frank'){
 }
 
 //console.log(loginUserMessage('Ketan'));
-console.log(loginUserMessage());
+//console.log(loginUserMessage());
+
+function calculateCertPrice(...num1){
+    return num1
+}
+
+//console.log(calculateCertPrice(700, 400, 599, 2049));
+
+const user = {
+    username: "ketan",
+    price: 199
+}
+
+function handleObject(anyobject){
+    console.log(`Username is ${anyobject.username} and price is ${anyobject.price}`);
+    
+}
+
+//handleObject(user)
+handleObject({
+    username: "Bob",
+    price: 499
+})
+
+const newArr = [47, 79, 56, 29, 38]
+
+function returnSecondValue(getArr){
+    return getArr[3]
+}
+//console.log(returnSecondValue(newArr));
+console.log(returnSecondValue([56, 76, 39, 49]));
+

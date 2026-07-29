@@ -42,3 +42,31 @@ function one(){
 }
 
 //one()
+
+if (true){
+    const username = "hitesh"
+    if (username === "hitesh") {
+        const website = " youtube"
+        //console.log(username + website)
+    }
+    //console.log(website); // error
+}
+//console.log(username); // error
+
+//________________Intrestering____________________
+
+//addOne(5) // return result
+
+function addOne(num){
+    return num + 1
+}
+
+//addOne(5) // return result
+
+//addTwo(5) // error
+
+const addTwo = function(num){
+    return num + 2
+}
+
+//addTwo(5) // return result

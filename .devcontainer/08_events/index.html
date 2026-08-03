@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HTML Events</title>
+     <style>
+        body{
+            background-color: #212121;
+            color: #ffff;
+        }
+    </style>
+</head>
+<body>
+    <h2>Pokemon Images</h2>
+    <div>
+        <ul id="images">
+            <li><img width="200px" id="bulbasor" 
+                src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQQfUDzLgws404wAPQ_T7j5Kw7KQxULAFiQEbvfhQmqDA&s=10" alt="Bulbasor"></li>
+            <li><img width="200px" id="pikachu" 
+                src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTyGsuHq0A9u_JLG8FfWFAxwF0kDs7q5VvF4IPHkON3Ww&s=10" alt="Pikachu"></li>
+            <li><a style="color: white;" href="https://google.com" id="google">Google</a></li>
+        </ul>
+    </div>
+</body>
+    <script>
+        // <--- approch two --->
+        //document.getElementById('bulbasor').onclick = function() {
+        //    alert('Bulba-sor')
+        //}
+
+        // <--- approch three --->
+        // Some eventListner methods________________
+        // type, timestamp, defaultPrevented, target
+        // toElement, srcElement, currentTarget,
+        // clientX, clientY, screenX, screenY,
+        // altkey, ctrlkey, shiftkey, keyCode
+        
+        // document.getElementById('images').addEventListener('click', function(e){
+        //     console.log('Ul clicked');
+        // }, true)
+
+        // document.getElementById('bulbasor').addEventListener('click', function(e){
+        //     //alert('Bulba-sor')
+        //     console.log('Bulbasor clicked');
+        //     e.stopPropagation()
+        // }, true)
+
+        // document.getElementById('google').addEventListener('click', function (e) {
+        //     console.log('Google clcked');
+        //     e.stopPropagation()
+        //     e.preventDefault()
+        // }, false)
+        
+
+        document.querySelector('#images').addEventListener('click', (e) => {
+            //console.log(e.target.parentNode);
+            console.log(e.target.tagName);
+            console.log(e.target.id);
+            if (e.target.tagName === 'IMG') {
+                let removeIt = e.target.parentNode
+                removeIt.remove()
+            }
+           
+            
+        }, false)
+        // removeIt.parentNode.removeChild(removeIt)
+
+    </script>
+</html>

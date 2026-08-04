@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JS Async</title>
+    <style>
+        body{
+            background-color: rgb(20, 20, 20);
+            color: #f0f0f0;
+        }
+    </style>
+</head>
+<body>
+    <h1>Chai aur JavaScript</h1>
+    <button id="start-btn">start</button>
+    <button id="stop-btn">stop</button>
+</body>
+<script>
+    // const sayDate = function (str) {
+    //     console.log(str, Date.now());
+    // }
+    // const stopMe = setInterval(sayDate, 2000, 'Hello');
+    // clearInterval(stopMe)
+
+    const sayDate = function (str) {
+        console.log(str, Date.now());
+        } 
+    
+    let stop;
+
+    const start = function(){ 
+        console.log('Started');
+        if(!stop){
+            stop = setInterval(sayDate, 2000, 'Hello')
+        }
+    }
+
+    const stopMe = function(){
+        clearInterval(stop)
+        console.log('Stopped');
+        stop = null
+    }
+
+    document.querySelector('#start-btn').addEventListener('click', start)
+    
+    document.querySelector('#stop-btn').addEventListener('click', stopMe)
+
+</script>
+</html>

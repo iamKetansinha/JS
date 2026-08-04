@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JS Async</title>
+    <style>
+        body{
+            background-color: rgb(20, 20, 20);
+            color: #f0f0f0;
+        }
+    </style>
+</head>
+<body>
+    <h1>Chai aur Code</h1>
+    <button id="stop-btn">stop</button>
+</body>
+<script>
+    // setTimeout( () => {
+    //    console.log('Hi, Ketan');
+    // }, 2000)
+
+    // const sayHi = function(){
+    //     console.log('Hi, Ketan');
+    // }
+
+    // setTimeout(sayHi, 2000)
+
+    const changeText = function(){
+        document.querySelector('h1').
+        innerHTML="Hello, I'm Ketan"
+    }
+    const changeMe = setTimeout(changeText, 2000)
+
+    document.querySelector('#stop-btn').addEventListener('click', () => {
+        clearTimeout(changeMe)
+        return console.log('Stopped');
+    })
+    
+</script>
+</html>

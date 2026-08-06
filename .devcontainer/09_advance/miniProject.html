@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mini-Project</title>
+    <style>
+        body{
+            background-color: #212121;
+            color: #f1f1f1;
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .card{
+            width: 275px;
+            height: 550px;
+            background-color: rgb(26, 26, 26);
+            border: 2px solid white;
+            border-radius: 4px;
+            overflow: hidden;
+        }
+        .img{
+            width: 265px;
+            height: 300px;
+            object-fit: cover;
+            margin: 5px;
+            border-radius: 4px;
+        }
+        a{
+            font-weight: 550;
+            text-decoration: none;
+            color: darkorange;
+            margin-left: 8px;
+            padding: none;
+            font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+        }
+        h2{
+            font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+            font-size: 24px;
+            margin-left: 8px;
+            padding: none;
+        }
+        h3{
+            font-family: Arial, Helvetica, sans-serif;
+            font-size: 18px;
+            margin-left: 8px;
+            padding: none;
+        }
+    </style>
+</head>
+<body>
+    <div class="card">
+        
+    </div>
+</body>
+<script>
+    const requestUrl = 'https://api.github.com/users/hiteshchoudhary'
+    const xhr = new XMLHttpRequest();
+    xhr.open('GET', requestUrl)
+    xhr.onreadystatechange = function(){
+        if (xhr.readyState === 4){
+            const data = JSON.parse(this.responseText)
+            console.log(data);
+
+            const parent = document.querySelector('.card')
+
+            const element = document.createElement('div')
+            element.classList.add('user')
+        
+            const image = document.createElement('img')
+            image.classList.add('img')
+            image.src = data.avatar_url;
+
+            const name = document.createElement('h2')
+            name.textContent = 'name: '+ data.name
+
+            const userName = document.createElement('h3')
+            userName.textContent = 'login: '+ data.login
+
+            const userId = document.createElement('h3')
+            userId.textContent = 'id: '+ data.id
+
+            const link = document.createElement('a')
+            link.href = data.url
+            link.textContent = 'Visit Profile'
+
+            element.append(image, name, userName, userId, link)
+            parent.append(element)
+        }
+    }
+    xhr.send()
+
+</script>
+</html>
